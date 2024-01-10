@@ -1,0 +1,6 @@
+podman image build -t <image-name>:<tag> .
+podman login docker.io
+podman push <imageID> docker://<namespace>/<repo>
+
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
