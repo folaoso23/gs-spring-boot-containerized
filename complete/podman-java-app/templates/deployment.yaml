@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-app-podman-java-app
+  labels:
+    helm.sh/chart: podman-java-app-0.1.0
+    app.kubernetes.io/name: podman-java-app
+    app.kubernetes.io/instance: test-app
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: podman-java-app
+      app.kubernetes.io/instance: test-app
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: podman-java-app-0.1.0
+        app.kubernetes.io/name: podman-java-app
+        app.kubernetes.io/instance: test-app
+        app.kubernetes.io/version: "1.16.0"
+        app.kubernetes.io/managed-by: Helm
+    spec:
+      containers:
+        - name: podman-java-app
+          image: "docker.io/folao/test-app:latest"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
