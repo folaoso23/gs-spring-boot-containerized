@@ -6,17 +6,15 @@ Now you can create a web controller for a simple web application, as the followi
 
 == Run the Application
 
-To run the application, run the following command in a terminal window (in the `complete`)
-directory:
-
+Navigate to the application directory:
 ====
 [source,text]
 ----
-./gradlew bootRun
+cd spring-app
 ----
 ====
 
-If you use Maven, run the following command in a terminal window (in the `complete`)
+To run the application, run the following command in a terminal window (in the `complete`)
 directory:
 
 ====
